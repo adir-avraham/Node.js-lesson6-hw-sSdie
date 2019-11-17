@@ -9,48 +9,30 @@
     "fullName": "adir",
     "age": "34",
     "email": "adir.avraham@gmail.com",
-    "password": "ghghgh"
+    "password": "1234"
   },
   {
-    "fullName": "saraf",
+    "fullName": "sara",
     "age": "33",
     "email": "sara@eklaw.com",
-    "password": "34fssw"
+    "password": "1111"
   },
   {
-    "fullName": "sadf",
-    "age": "3333",
-    "email": "wwerwer",
-    "password": "33443"
+    "fullName": "Mai",
+    "age": "19",
+    "email": "mai@gmail.com",
+    "password": "12345"
   },
   {
-    "fullName": "nitzan-avraham",
-    "age": 20,
+    "fullName": "nitzan",
+    "age": "24",
     "email": "nitzan@gmail.com",
-    "password": "1111"
+    "password": "1234"
   },
   {
-    "fullName": "nitzan-avraham",
-    "age": 21,
-    "email": "nitzan1@gmail.com",
-    "password": "1111"
-  },
-  {
-    "fullName": "nitzan-avraham",
-    "age": 21,
-    "email": "nitzan2@gmail.com",
-    "password": "1111"
-  },
-  {
-    "fullName": "nitzan-avraham",
-    "age": 21,
-    "email": "nitzan3@gmail.com",
-    "password": "1111"
-  },
-  {
-    "fullName": "nitzan-avraham",
-    "age": 21,
-    "email": "nitzan4@gmail.com",
-    "password": "1111"
+    "fullName": "evelin",
+    "age": "24",
+    "email": "evelin@gmail.com",
+    "password": "1234"
   }
 ]
