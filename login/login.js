@@ -1,37 +1,31 @@
 
-const users = require('../users.json')
+const usersData = require('../data/users.json')
 const express = require('express');
 const router = express.Router();
-const moment = require("moment");
-const usersKeys = {};
+const jwt = require('jsonwebtoken');
+
+
 
 router.use('/login', (req, res, next)=>{
-
+    const {users} = usersData;
     const {email, password} = req.body;
-    const isLogin = users.find(user => user.email === email && user.password === password)
-    if (!isLogin) return res.json({message: "User name and/or password is incorrect", redirect: false});
-    next();
+    const userExist = users.find(user => user.email === email && user.password === password)
+    if (!userExist) return res.json({message: "User name and/or password is incorrect", redirect: false});
+    const token = jwt.sign({userExist},
+      process.env.SECRET,
+      {expiresIn: 60000})
+    res.json({message: `You are logged-in!!!`, token: token, redirect: true })
 })
 
-router.post('/login', (req, res, next) =>{
-    const apiKey = getApiKey();
-    const expiration = moment().format("x");
-    usersKeys[apiKey] = expiration;
-    res.json({message: `You are logged-in!!! your key is ${apiKey}`, redirect: true, key: apiKey})
-})
+// router.post('/login', (req, res, next) =>{
+//   const { authorization } = req.headers
+//   jwt.verify(authorization, process.env.SECRET, (err, decoded))
+//   if (err) res.status(401).send("Verification failed")
+//   console.log(decoded)
+//     res.json({message: `You are logged-in!!!`, redirect: true })
+// })
 
   
-  function getApiKey() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-      const r = (Math.random() * 16) | 0,
-        v = c == "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
-  }
-  
-  
-
-
 
 
 
