@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const register = require('./register/register');
 const userLogin = require('./login/login');
+const checkEnvParams = require('./checkEnvParams/checkEnvParams') 
+checkEnvParams(["PORT","SECRET"])
+
 
 api.use(cors())
 api.use(bodyParser.json());
